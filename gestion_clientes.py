@@ -67,17 +67,6 @@ def modificacion_cliente():
         print("----CLIENTE MODIFICADO---")
         datos_modificados = True
 
-def baja_cliente():
-    global datos_modificados
-    dni = input("DNI del cliente a dar de baja: ")   
-    cliente = obtener_cliente(dni)
-    if cliente == None:
-        print("----El cliente con DNI " + dni + ", no existe----")
-    else:
-        lista_clientes.remove(cliente)
-        print("---CLIENTE BORRADO---")
-        datos_modificados = True
-
 def informacion_cliente():
     dni = input("Introduce el DNI del cliente a consultar: ")
     cliente = obtener_cliente(dni)
@@ -107,7 +96,6 @@ def ladrar():
 while True:
     opcion = mostrar_opciones()
     if opcion == 1: alta_cliente()
-    elif opcion == 2: baja_cliente()
     elif opcion == 3: modificacion_cliente()
     elif opcion == 4: informacion_cliente()
     elif opcion == 5: informacion_clientes()
